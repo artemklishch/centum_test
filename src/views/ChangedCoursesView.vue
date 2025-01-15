@@ -10,7 +10,7 @@ const store = useCurrenciesStore();
 <template>
   <div class="changed-courses">
     <h1>Changed users's courses</h1>
-    <CurrenciesList path="/changed-courses" :currencies="store.currenciesPerPage" />
+    <CurrenciesList path="/changed-courses" />
     <PaginationButtons v-if="store.currenciesPerPage.length > CURRENCIES_PER_PAGE" />
     <button v-if="store.changedCurrencies.length" @click="store.deleteAllChangedCurrencies">Delete all</button>
     <div class="courses-by-date__currency">

@@ -19,7 +19,7 @@ watch(dateInput, (value) => {
     <h1>Courses by certain date</h1>
     <h5>Pick the date below</h5>
     <input v-model="dateInput" type="date" :max="maxValue" />
-    <CurrenciesList v-if="dateInput" path="/courses-by-date" :currencies="store.currenciesPerPage" />
+    <CurrenciesList v-if="dateInput" path="/courses-by-date" />
     <PaginationButtons v-if="dateInput && store.currenciesPerPage.length > CURRENCIES_PER_PAGE" />
     <div class=" courses-by-date__currency">
       <RouterView />

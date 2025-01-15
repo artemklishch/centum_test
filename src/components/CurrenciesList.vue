@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Currency } from '@/stores/currencies';
+import { useCurrenciesStore, type Currency } from '@/stores/currencies';
 
+const store = useCurrenciesStore();
 const props = defineProps<{
-    currencies: Array<Currency>,
-    path?: string;
+    path: string;
 }>()
 
 function navigate(currency: Currency) {
@@ -15,7 +15,7 @@ function navigate(currency: Currency) {
 
 <template>
     <ul class="currencies-list">
-        <li v-for="currency in props.currencies" class="currencies-list__item" :key="currency.cc">
+        <li v-for="currency in store.currenciesPerPage" class="currencies-list__item" :key="currency.cc">
             <RouterLink :to="navigate(currency)">
                 {{ currency.txt }}, {{ currency.rate }}
             </RouterLink>

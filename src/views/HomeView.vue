@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <div class="home">
     <h1>Currencies today</h1>
-    <CurrenciesList path="" :currencies="store.currenciesPerPage" />
+    <CurrenciesList path="" />
     <PaginationButtons v-if="store.currenciesPerPage.length > CURRENCIES_PER_PAGE" />
     <div class="home__currency">
       <RouterView />

@@ -104,7 +104,6 @@ export const useCurrenciesStore = defineStore("currencies", () => {
         selectedCurrency.value.exchangedate
     );
     if (selectedCurrency.value && updatedCurrencyIndex > -1) {
-      console.log("rate", rate);
       selectedCurrency.value.rate = rate;
       changedCurrencies.value[updatedCurrencyIndex];
       setDefaultCurrencies(changedCurrencies.value);
